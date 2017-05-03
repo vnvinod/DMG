@@ -374,10 +374,10 @@ a:hover.viewall {
 	color:#96AEC4;
 }
 .news .list-group-item {
-	font-size:12px;	
+	font-size:14px;	
 }
 .news .list-group-item a {
-	font-size:16px;
+	font-size:14px;
 	display:block;
 	/*width:98%;
 	white-space: nowrap;
@@ -568,46 +568,17 @@ label.control-label {
     padding-top: 8px;
 }
 .calendar-zone .list-group-item.selected  {
-    background-color: #333;
+    background-color: #2D5C88;
     color:#fff;
     border:0;
 }
 .calendar-zone .list-group-item.selected .event-date {
-    background: #333 url("../images/cricle-white.png") no-repeat scroll center center;
+    background: #2D5C88 url("../images/cricle-white.png") no-repeat scroll center center;
     font-size: 12px;
     height: 51px;
     padding-top: 8px;
 }
 /* Calendar - */
-
-/* Ticker + */
-.ticker-news {
-    width: 85%;
-    float: left;
-}
-.ti_wrapper {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  height: 20px;
-  margin-top:5px;
-}
-.ti_slide {
-  width: 30000px;
-  position: relative;
-  left: 0;
-  top: 0;
-}
-.ti_content {
-  width: 8000px;
-  position: relative;
-  float: left;
-}
-.ti_news { 
-	float: left; 
-	margin-right:50px; 
-}
-/* Ticker - */
 
 /* Contacts + */
 .contacts .list-group-item img {
@@ -624,11 +595,11 @@ label.control-label {
 	text-transform: uppercase;
 }
 .contacts .list-group-item span {
-	color:#96AEC4;
+	color:#2D5C88;
 	font-size:16px;
 }
 .contacts .list-group-item span.glyphicon {
-	color:#96AEC4;
+	color:#2D5C88;
 	font-size:12px;
 	margin-right: 5px;
 }
@@ -636,3 +607,4 @@ label.control-label {
 	text-transform: none;
 }
 /* Contacts - */
+

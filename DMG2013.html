@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Phoenix Medical Group &#8211; AZ</title>
+<link rel="icon" href="favicon-10.ico" type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -22,23 +23,6 @@ $(function () {
     createMarquee({container_class: '.alert-container', duration:39000, padding:20});
 
     $('.news .list-group-item a').ellipsis();
-    // $("#news").newsTicker();
-    // $("#news").hover(
-    //   function(handlerIn) {$("#news").stopTicker();alert('stop');},function(handlerOut) {$("#news").newsTicker();alert('start');}
-    // );
-        // var timer = !1;
-        // 			_Ticker = $("#news").newsTicker();
-        // 			_Ticker.on("mouseenter",function(){
-        // 				var __self = this;
-        // 				timer = setTimeout(function(){
-        // 					__self.pauseTicker();
-        // 				},200);
-        // 			});
-        // 			_Ticker.on("mouseleave",function(){
-        // 				clearTimeout(timer);
-        // 				if(!timer) return !1;
-        // 				this.startTicker();
-        // 	});
 
   //New hire carousel
 	$("#newhires").jCarouselLite({
@@ -447,6 +431,8 @@ function DisplayCityTime(offset) {
 </div>
 <!-- Footer End -->
 
+
+
 <!-- Modal Start -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -471,7 +457,5 @@ function DisplayCityTime(offset) {
   </div>
 </div>
 <!-- Modal End -->
-
-
 </body>
 </html>

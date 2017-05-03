@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Phoenix Medical Group &#8211; AZ</title>
+<link rel="icon" href="favicon-10.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/dmg.css">
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jcarousellite_1.0.1.js"></script>
+<script src="js/jClocksGMT.js"></script>
+<script src="js/jquery.rotate.js"></script>  
+<script src="js/jquery-ui.js"></script> 
+<script src="js/marquee.js"></script>
+<script src="js/jquery.ellipsis.min.js"></script>
+<script src="js/jquery.slimscroll.min.js"></script>
+<script type="text/javascript">
+$(function () {
+
+$('.contacts-scroll').slimscroll({
+  height: '328px'
+});
+
+    //News ticker
+    createMarquee({container_class: '.alert-container', duration:39000, padding:20});
+
+    $('.news .list-group-item a').ellipsis();
+
+  //New hire carousel
+	$("#newhires").jCarouselLite({
+		auto:  6000,
+		speed:3000,
+        btnNext: ".next",
+        btnPrev: ".prev",
+        circular: true,	
+        visible: 1,	
+		scroll: 1
+    });
+
+    //Top nav display dropdown on mouse hover  
+    $(".dropdown").hover(            
+        function() {
+            $('dropdown > .dropdown-menu', this).stop( true, true ).fadeIn("fast");
+            $(this).toggleClass('open');
+        },
+        function() {
+            $('dropdown > .dropdown-menu', this).stop( true, true ).fadeOut("fast");
+            $(this).toggleClass('open');
+    });   
+
+
+    //Display time
+    $('#mst').jClocksGMT({offset: '-7', dst: true, timeformat: 'hh:mm a'});
+     
+
+    //Display date
+    $("#mstdate").append($.datepicker.formatDate( "MM d", new Date( DisplayCityTime('-5')))) 	 	
+
+  
+  var today = $.datepicker.formatDate('MM d, yy', new Date()).toString().toUpperCase();
+  //console.log(today);
+
+  var idx_date;
+    var listItems = $(".calendar-zone ul.list-group li");
+      listItems.each(function(idx, li) {
+          //console.log(li )
+            //console.log( idx + ": " + $(this).find(".sr-only").text() );
+            idx_date = $.trim($(this).find(".sr-only").text().toUpperCase());
+
+            if (idx_date == today){
+                //console.log( idx + ": match found" );
+                $(this).addClass("selected")
+            }
+
+      });
+
+});
+
+//Display date based on timezone
+function DisplayCityTime(offset) {
+    // Date object for current location
+    var adate = new Date();
+
+    // UTC time in msec
+    var utc = adate.getTime() + (adate.getTimezoneOffset() * 60000);
+
+    // Date object for the requested city
+    var newdate = new Date(utc + (3600000*offset));
+
+    // return time as a string
+    return newdate;
+}
+</script>
+</head>
+<body>
+<!-- Header Start -->
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-md-8 col-lg-8 remove-padding"> <a href="#"><img src="images/phoenix-medical-group.png" alt="Phoenix Medical Group" class="logo"/></a> </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="pull-right">
+            	<div class="timezone left">
+                	<p class="zone">Phoenix, AZ</p> 
+                    <p class="timedate"><span class="date" id="mstdate"></span> | <span class="time" id="mst"></span></p>
+                </div>
+            	<div class="timezone right">
+                	<p class="temperature"><img src="images/clear.png" alt="Mostly Cloudy" title="Mostly Cloudy"> <span>69°</span></p> 
+                    <p class="climate">Mostly Cloudy</p>
+                </div>
+
+            </div>        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Header End --> 
+
+<!-- Top Nav Start -->
+<div class="top_nav">
+  <div class="container remove-padding">
+    <div class="row">
+      <nav class="navbar navbar-default"> 
+        
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        </div>
+        
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="my-navbar-collapse">
+
+        <ul class="nav navbar-nav">
+        <li class=""><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li class="dropdown active">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Departments <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Ambulatory Care</a></li>
+            <li><a href="#">Anesthesiology</a></li>
+            <li><a href="#">Emergency Medicine</a></li>
+            <li><a href="#">Internal Medicine</a></li>
+            <li><a href="#">Obstetrics &amp; Gynecology</a></li>
+            <li><a href="#">Orthopedics</a></li>
+            <li><a href="#">Pathology</a></li>
+            <li><a href="#">Pediatrics</a></li>
+            <li><a href="#">Psychiatry</a></li>
+            <li><a href="#">Radiology</a></li>
+            <li><a href="#">Surgery</a></li>
+          </ul>
+        </li> 
+        <li><a href="#">About DMG</a></li>                      
+      </ul>
+
+          <div class="col-xs-12 col-sm-4 col-md-12 col-lg-3 searchzone pull-right ">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+              <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+              </span> </div>
+            <!-- /input-group --> 
+          </div>
+        </div>
+        <!-- /.navbar-collapse --> 
+        
+      </nav>
+    </div>
+    <!--row--> 
+  </div>
+  <!--.container--> 
+</div>
+<!-- Top Nav End --> 
+
+
+
+<!-- Mid content Start -->
+<div class="container department">
+  <!-- Row Start -->	
+  <div class="row row-shift top-space">
+    <!-- Title Start -->
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h3 class="pg-title">Ambulatory Care</h3>    
+    </div>    
+    <!-- Title Emnd -->
+
+    <!-- Left Column Start -->
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+
+    <!-- Page Contacts Start -->
+        <div class="panel contacts">
+          <div class="panel-heading">
+            <h3 class="panel-title">Contacts</h3>
+          </div>  
+          <div class="panel-body contacts-scroll">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <div class="col-lg-3"><img src="images/newhires1.jpg" class="img-circle"></div>
+                  <div class="col-lg-9 remove-padding">
+                    <span>Kevin Buckley</span><br>
+                  Director of sales<br>
+                  <span class="glyphicon glyphicon-phone-alt"></span> 800 123 1234 | <span class="glyphicon glyphicon-map-marker"></span> AZ - Avondale<br>
+                  <span class="glyphicon glyphicon-envelope"></span> <a href="mailto:kbuckley@linerlaw.com">kbuckley@linerlaw.com</a>
+                  </div> 
+                </li>
+                <li class="list-group-item">
+                  <div class="col-lg-3"><img src="images/newhires2.jpg" class="img-circle"></div>
+                  <div class="col-lg-9 remove-padding">
+                    <span>Kevin Buckley</span><br>
+                  Director of sales<br>
+                  <span class="glyphicon glyphicon-phone-alt"></span> 800 123 1234 | <span class="glyphicon glyphicon-map-marker"></span> AZ - Mirage<br>
+                  <span class="glyphicon glyphicon-envelope"></span> <a href="mailto:kbuckley@linerlaw.com">kbuckley@linerlaw.com</a>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="col-lg-3"><img src="images/newhires2.jpg" class="img-circle"></div>
+                  <div class="col-lg-9 remove-padding">
+                    <span>Kevin Buckley</span><br>
+                  Director of sales<br>
+                  <span class="glyphicon glyphicon-phone-alt"></span> 800 123 1234 | <span class="glyphicon glyphicon-map-marker"></span> AZ - Phoenix<br>
+                  <span class="glyphicon glyphicon-envelope"></span> <a href="mailto:kbuckley@linerlaw.com">kbuckley@linerlaw.com</a>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="col-lg-3"><img src="images/newhires1.jpg" class="img-circle"></div>
+                  <div class="col-lg-9 remove-padding">
+                    <span>Kevin Buckley</span><br>
+                  Director of sales<br>
+                  <span class="glyphicon glyphicon-phone-alt"></span> 800 123 1234 | <span class="glyphicon glyphicon-map-marker"></span> AZ - Guadalupe<br>
+                  <span class="glyphicon glyphicon-envelope"></span> <a href="mailto:kbuckley@linerlaw.com">kbuckley@linerlaw.com</a>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="col-lg-3"><img src="images/newhires2.jpg" class="img-circle"></div>
+                  <div class="col-lg-9 remove-padding">
+                    <span>Kevin Buckley</span><br>
+                  Director of sales<br>
+                  <span class="glyphicon glyphicon-phone-alt"></span> 800 123 1234 | <span class="glyphicon glyphicon-map-marker"></span> AZ - Mesa<br>
+                  <span class="glyphicon glyphicon-envelope"></span> <a href="mailto:kbuckley@linerlaw.com">kbuckley@linerlaw.com</a>
+                  </div>
+                </li>
+              </ul>
+          </div>
+        </div>
+
+    <!-- Page Contacts End -->
+      
+        <div class="panel calendar-zone">
+          <div class="panel-body remove-padding">
+          <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a data-toggle="tab" href="#tabA">CALENDAR</a></li>
+            <li><a data-toggle="tab" href="#tabB">EVENTS</a></li>
+          </ul>
+              <div class="tab-content">
+                            <div id="tabA" class="tab-pane fade in active">
+                                <img src="images/calendar.jpg" class="img-responsive center-block" alt="">
+                            </div>
+                            <div id="tabB" class="tab-pane fade">
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-2 event-date text-center">
+                                            MON<br> 07
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10 event-details">
+                                            <h4 class="text-uppercase">Event Name</h4>
+                                            <h5>Time | Location</h5>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item selected">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-2 event-date text-center">
+                                            MON<br> 07
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10 event-details">
+                                            <h4 class="text-uppercase">Event Name</h4>
+                                            <h5>Time | Location</h5>
+                                        </div>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-2 event-date text-center">
+                                            MON<br> 07
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-10 event-details">
+                                            <h4 class="text-uppercase">Event Name</h4>
+                                            <h5>Time | Location</h5>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!--list-group-->
+                            </div>
+                        </div>
+                        <!--tab-content-->
+          </div>
+        </div>
+    </div>
+    <!-- Left Column End -->
+
+    <!-- Right Column Start -->
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="panel news">
+          <div class="panel-heading">
+            <h3 class="panel-title">News <a class="pull-right viewall" href="#nolink"><span class="glyphicon glyphicon-list-alt" data-toggle="tooltip" data-placement="top" title="View All"></span></a> <a class="pull-right viewall" href="#nolink"><span class="glyphicon glyphicon-plus-sign" data-toggle="tooltip" data-placement="top" title="Add"></span></a></h3>
+          </div>  
+          <div class="panel-body ">
+              <ul class="list-group">
+                <li class="list-group-item">New employee discounts available for Best Buy and Radio Shack <a href="#nolink">Read more</a></li>
+                <li class="list-group-item">Benefits Sessions sign-up beginning on June 1 <a href="#nolink">Read more</a></li>
+                <li class="list-group-item">New employee discounts available for Best Buy and Radio Shack <a href="#nolink">Read more</a></li>
+                <li class="list-group-item">Benefits Sessions sign-up beginning on June 1 <a href="#nolink">Read more</a></li>
+                <li class="list-group-item">New employee discounts available for Best Buy and Radio Shack <a href="#nolink">Read more</a></li>
+              </ul>
+          </div>
+        </div>
+
+        <div class="panel info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Benefit Information </h3>
+          </div>  
+          <div class="panel-body">
+              Employers, or their agents, are generally required to make regular online payroll submissions for each pay period during the year detailing payments and deductions made from employees on or before the date they are paid to the employees.​​​
+          </div>
+        </div>
+
+      </div>
+      <!-- Right Column End -->    
+   
+      
+  </div>
+  <!-- Row End -->
+
+    	
+</div>
+<!-- Mid content End --> 
+
+<!-- Footer Start -->
+<div class="footer top-space">
+  <div class="container">
+    <div class="row row-shift">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3"></div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">&copy; District Medical Group - A non-profit Phoenix Medical Group since 1993</div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3"><a href="https://www.dmgaz.org/" target="_blank" class="pull-right">www.dmgaz.org</a></div>
+    </div>
+  </div>
+</div>
+<!-- Footer End -->
+
+
+</body>
+</html>

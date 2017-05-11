@@ -134,21 +134,47 @@ function DisplayCityTime(offset) {
         <div class="collapse navbar-collapse" id="my-navbar-collapse">
 
         <ul class="nav navbar-nav">
-        <li class=""><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li class="dropdown active">
+        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Departments <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Ambulatory Care</a></li>
-            <li><a href="#">Anesthesiology</a></li>
-            <li><a href="#">Emergency Medicine</a></li>
-            <li><a href="#">Internal Medicine</a></li>
+          <ul class="dropdown-menu multi-level">
+            <li class="dropdown-submenu">
+              <a href="#">Ambulatory Care</a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#">Contact Information And Hours</a></li>
+                      <li><a href="#">Insurance Verifications</a></li>
+                      <li><a href="#">Billing</a></li>
+                      <li><a href="#">Collections</a></li>
+                      <li><a href="#">Scheduling</a></li>
+                      <li><a href="#">Coding</a></li>
+                      <li><a href="#">Daily Deposits</a></li>
+                      <li><a href="#">RCM Reporting</a></li>
+                      <li><a href="#">Policies and Procedures</a></li>
+                  </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a href="#">Anesthesiology</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Billing</a></li>
+                    <li><a href="#">Collections</a></li>
+                </ul>              
+            </li>
+            <li class="dropdown-submenu">
+              <a href="#">Emergency Medicine</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Billing</a></li>
+                    <li><a href="#">Collections</a></li>
+                </ul>              
+            </li> 
+            <li class="dropdown-submenu">
+              <a href="#">Internal Medicine</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Billing</a></li>
+                    <li><a href="#">Collections</a></li>
+                </ul>              
+            </li>            
             <li><a href="#">Obstetrics &amp; Gynecology</a></li>
             <li><a href="#">Orthopedics</a></li>
-            <li><a href="#">Pathology</a></li>
-            <li><a href="#">Pediatrics</a></li>
-            <li><a href="#">Psychiatry</a></li>
-            <li><a href="#">Radiology</a></li>
-            <li><a href="#">Surgery</a></li>
           </ul>
         </li> 
         <li><a href="#">About DMG</a></li>                      
@@ -171,7 +197,7 @@ function DisplayCityTime(offset) {
   </div>
   <!--.container--> 
 </div>
-<!-- Top Nav End --> 
+<!-- Top Nav End -->  
 
 
 

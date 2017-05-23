@@ -14,13 +14,26 @@
 <script src="js/jClocksGMT.js"></script>
 <script src="js/jquery.rotate.js"></script>  
 <script src="js/jquery-ui.js"></script> 
-<script src="js/marquee.js"></script>
+<script src="js/jquery.tickerNews.min.js"></script>
 <script src="js/jquery.ellipsis.min.js"></script>
 <script type="text/javascript">
 $(function () {
 
     //News ticker
-    createMarquee({container_class: '.alert-container', duration:39000, padding:20});
+    //createMarquee({container_class: '.alert-container', duration:39000, padding:20});
+    var timer = !1;
+    _Ticker = $(".TickerNews").newsTicker();
+    /*_Ticker.on("mouseenter",function(){
+        var __self = this;
+        timer = setTimeout(function(){
+            __self.pauseTicker();
+        },300);
+    });
+    _Ticker.on("mouseleave",function(){
+        clearTimeout(timer);
+        if(!timer) return !1;
+        this.startTicker();
+    });*/
 
     $('.news .list-group-item a').ellipsis();
 
@@ -195,14 +208,20 @@ function DisplayCityTime(offset) {
 <!-- Top Nav End --> 
 
 <!--Alert Start-->
-<div class="alert-container">
-    <div class="alert-title"> TIP OF THE DAY </div>
-    <div class="marquee">
-        <ul class="marquee-content-items">
-        <li>Feeling grateful to or appreciative of someone or something in your life actually attracts more of the things that you appreciate</li>
-        </ul>
-    </div>
-</div>
+
+	    <div class="TickerNews">
+	    	<div class="leftside">
+	    		<h4>TIP OF THE DAY</h4>
+	    	</div>
+		    <div class="ti_wrapper">
+		        <div class="ti_slide">
+		            <div class="ti_content">
+		                <div class="ti_news">
+      I think it is often easier to make progress on mega-ambitious dreams. Since no one else is crazy enough to do it, you have little competition. In fact, there are so few people this crazy that I feel like I know them all by first name. ~ Larry Page</div>
+		            </div>
+		        </div>
+		    </div>
+	    </div>
 <!--Alert End-->
 
 <!-- Mid content Start -->
@@ -212,21 +231,21 @@ function DisplayCityTime(offset) {
     <!-- Favorite links Start -->
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
         <div class="panel favoritelinks">
-          <div class="panel-body col-lg-3">
+          <div class="panel-body">
             <div class="app-items">
             
-			    <a href="#"  class="card-container">
+			    <a href="#"  class="card-container col-lg-3">
 			        <div class="card">
 			            <div class="front">
 			                <img src="images/service-desk-plus.png">
 			            </div> <!-- end front panel -->
 			            <div class="back">
-			                <h4 class="text-center">Service Desk Plus</h4>
+			                <h4 class="text-center">Service Desk Plus<br><span>hello</span></h4>                
 			            </div> <!-- end back panel -->
 			        </div>
 			    </a>            
 
-			    <a href="#"  class="card-container">
+			    <a href="#"  class="card-container col-lg-3">
 			        <div class="card">
 			            <div class="front">
 			                <img src="images/password-self-service.png">
@@ -237,7 +256,7 @@ function DisplayCityTime(offset) {
 			        </div>
 			    </a>  
 			    
-			    <a href="#"  class="card-container">
+			    <a href="#"  class="card-container col-lg-3">
 			        <div class="card">
 			            <div class="front">
 			                <img src="images/TimeClock.jpg">
@@ -246,14 +265,10 @@ function DisplayCityTime(offset) {
 			                <h4 class="text-center">Time Clock</h4>
 			            </div> <!-- end back panel -->
 			        </div>
-			    </a>            
-            </div>
-          </div>
+			    </a>  
 
-          <div class="panel-body col-lg-3">
-            <div class="app-items">
-            
-			    <a href="#"  class="card-container">
+
+ 			    <a href="#"  class="card-container col-lg-3">
 			        <div class="card">
 			            <div class="front">
 			                <img src="images/service-desk-plus.png">
@@ -264,7 +279,7 @@ function DisplayCityTime(offset) {
 			        </div>
 			    </a>            
 
-			    <a href="#"  class="card-container">
+			    <a href="#"  class="card-container col-lg-3">
 			        <div class="card">
 			            <div class="front">
 			                <img src="images/password-self-service.png">
@@ -275,7 +290,7 @@ function DisplayCityTime(offset) {
 			        </div>
 			    </a>  
 			    
-			    <a href="#"  class="card-container">
+			    <a href="#"  class="card-container col-lg-3">
 			        <div class="card">
 			            <div class="front">
 			                <img src="images/TimeClock.jpg">
@@ -284,14 +299,9 @@ function DisplayCityTime(offset) {
 			                <h4 class="text-center">Time Clock</h4>
 			            </div> <!-- end back panel -->
 			        </div>
-			    </a>            
-            </div>
-          </div>
-          
-           <div class="panel-body col-lg-3">
-            <div class="app-items">
-            
-			    <a href="#"  class="card-container">
+			    </a>  
+
+			    <a href="#"  class="card-container col-lg-3">
 			        <div class="card">
 			            <div class="front">
 			                <img src="images/service-desk-plus.png">
@@ -302,7 +312,7 @@ function DisplayCityTime(offset) {
 			        </div>
 			    </a>            
 
-			    <a href="#"  class="card-container">
+			    <a href="#"  class="card-container col-lg-3">
 			        <div class="card">
 			            <div class="front">
 			                <img src="images/password-self-service.png">
@@ -313,7 +323,7 @@ function DisplayCityTime(offset) {
 			        </div>
 			    </a>  
 			    
-			    <a href="#"  class="card-container">
+			    <a href="#"  class="card-container col-lg-3">
 			        <div class="card">
 			            <div class="front">
 			                <img src="images/TimeClock.jpg">
@@ -322,14 +332,9 @@ function DisplayCityTime(offset) {
 			                <h4 class="text-center">Time Clock</h4>
 			            </div> <!-- end back panel -->
 			        </div>
-			    </a>            
-            </div>
-          </div>
-         
-          <div class="panel-body col-lg-3">
-            <div class="app-items">
-            
-			    <a href="#"  class="card-container">
+			    </a>  
+
+			    <a href="#"  class="card-container col-lg-3">
 			        <div class="card">
 			            <div class="front">
 			                <img src="images/service-desk-plus.png">
@@ -340,7 +345,7 @@ function DisplayCityTime(offset) {
 			        </div>
 			    </a>            
 
-			    <a href="#"  class="card-container">
+			    <a href="#"  class="card-container col-lg-3">
 			        <div class="card">
 			            <div class="front">
 			                <img src="images/password-self-service.png">
@@ -351,7 +356,7 @@ function DisplayCityTime(offset) {
 			        </div>
 			    </a>  
 			    
-			    <a href="#"  class="card-container">
+			    <a href="#"  class="card-container col-lg-3">
 			        <div class="card">
 			            <div class="front">
 			                <img src="images/TimeClock.jpg">
@@ -360,16 +365,19 @@ function DisplayCityTime(offset) {
 			                <h4 class="text-center">Time Clock</h4>
 			            </div> <!-- end back panel -->
 			        </div>
-			    </a>            
+			    </a>                                                           
             </div>
-          </div>
+
     <div class="panel-heading">
         <h3 class="panel-title">
         	<a class="pull-right viewall" href="#nolink">
                 <span class="badge">View All</span>
             </a>        
         </h3>
-    </div>
+    </div>            
+          </div>
+
+
           
  </div>
     </div>
